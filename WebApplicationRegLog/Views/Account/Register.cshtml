@@ -1,0 +1,67 @@
+﻿@model WebApplicationRegLog.Models.UserModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+<fieldset>
+    <legend>Register Form</legend>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>@Html.LabelFor(m => m.UserName)</td>
+                <td>@Html.TextBoxFor(m => m.UserName)</td>
+                <td>@Html.ValidationMessageFor(m => m.UserName, null, new { @class = "text text-danger" })</td>
+            </tr>
+
+
+
+            <tr>
+                <td>@Html.LabelFor(m => m.FirstName)</td>
+                <td>@Html.TextBoxFor(m => m.FirstName)</td>
+                <td>@Html.ValidationMessageFor(m => m.FirstName, null, new { @class = "text text-danger" })</td>
+            </tr>
+
+
+
+            <tr>
+                <td>@Html.LabelFor(m => m.LastName)</td>
+                <td>@Html.TextBoxFor(m => m.LastName)</td>
+                <td>@Html.ValidationMessageFor(m => m.LastName, null, new { @class = "text text-danger" })</td>
+            </tr>
+
+
+
+            <tr>
+                <td>@Html.LabelFor(m => m.Password)</td>
+                <td>@Html.TextBoxFor(m => m.Password)</td>
+                <td>@Html.ValidationMessageFor(m => m.Password, null, new { @class = "text text-danger" })</td>
+            </tr>
+
+
+
+            <tr>
+                <td>@Html.LabelFor(m => m.ConfirmPassword)</td>
+                <td>@Html.PasswordFor(m => m.ConfirmPassword)</td>
+                <td>@Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "text text-danger" })</td>
+            </tr>
+
+
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="name" value="Register" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.ValidationMessage("Error", "", new { @class = "text text-danger" })
+                </td>
+            </tr>
+        </table>
+    }
+</fieldset>
+
